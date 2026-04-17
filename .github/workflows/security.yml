@@ -30,7 +30,7 @@ jobs:
       # First pass produces a SARIF report. exit-code=0 so this step never
       # fails — we want the SARIF uploaded even when findings exist.
       - name: Trivy filesystem scan (SARIF)
-        uses: aquasecurity/trivy-action@0.24.0
+        uses: aquasecurity/trivy-action@0.35.0
         with:
           scan-type: fs
           scan-ref: .
@@ -53,7 +53,7 @@ jobs:
       # block on real security regressions.
       - name: Trivy filesystem scan (table + fail-on-findings)
         if: always()
-        uses: aquasecurity/trivy-action@0.24.0
+        uses: aquasecurity/trivy-action@0.35.0
         with:
           scan-type: fs
           scan-ref: .
